@@ -23,14 +23,14 @@ export default function EvitandoBuscasDesnecessariasErrado() {
    );
 
    return (
-      <main style={{ flexDirection: "column", display: "flex", gap: "12px" }}>
-         <div style={{ justifyContent: "center", display: "flex", height: "200px" }}>
+      <main className="flex-col items-center flex gap-3 w-full">
+         <div className="justify-center flex h-[200px] w-full">
             {show.videos && <Videos />}
             {show.fotos && <Fotos />}
             {show.mapa && <Mapa />}
          </div>
 
-         <div>
+         <div className="flex gap-3">
             <button onClick={handleShowVideos}>Vídeos</button>
             <button onClick={handleShowFotos}>Fotos</button>
             <button onClick={handleShowMapa}>Mapa</button>
@@ -52,20 +52,7 @@ const Videos: React.FC = () => {
       fakeHttpGetAndSetVideo();
    }, []);
 
-   return (
-      <div
-         style={{
-            backgroundColor: "red",
-            justifyContent: "center",
-            alignItems: "center",
-            display: "flex",
-            height: "100%",
-            width: "100%",
-         }}
-      >
-         {videos.map((video) => video)}
-      </div>
-   );
+   return <div className="justify-center items-center flex bg-red-700 size-full">{videos.map((video) => video)}</div>;
 };
 
 const Fotos: React.FC = () => {
@@ -81,20 +68,7 @@ const Fotos: React.FC = () => {
       fakeHttpGetAndSetFotos();
    }, []);
 
-   return (
-      <div
-         style={{
-            backgroundColor: "yellow",
-            justifyContent: "center",
-            alignItems: "center",
-            display: "flex",
-            height: "100%",
-            width: "100%",
-         }}
-      >
-         {fotos.map((foto) => foto)}
-      </div>
-   );
+   return <div className="justify-center items-center flex bg-yellow-700 size-full">{fotos.map((foto) => foto)}</div>;
 };
 
 const Mapa: React.FC = () => {
@@ -110,18 +84,5 @@ const Mapa: React.FC = () => {
       fakeHttpGetAndSetMapa();
    }, []);
 
-   return (
-      <div
-         style={{
-            backgroundColor: "blue",
-            justifyContent: "center",
-            alignItems: "center",
-            display: "flex",
-            height: "100%",
-            width: "100%",
-         }}
-      >
-         {mapa}
-      </div>
-   );
+   return <div className="justify-center items-center flex bg-blue-700 size-full">{mapa}</div>;
 };

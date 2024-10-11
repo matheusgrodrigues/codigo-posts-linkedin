@@ -1,5 +1,6 @@
+"use client";
+
 import { useState } from "react";
-import "./styles.css";
 
 import EvitandoBuscasDesnecessarias from "./evitando-buscas-desnecessarias";
 
@@ -17,7 +18,7 @@ export default function Home() {
          {!selectedPost && (
             <ul style={{ listStyle: "none" }}>
                {posts.map((post) => (
-                  <li style={{ width: "max-content" }} key={post}>
+                  <li className="w-max" key={post}>
                      <button onClick={() => setSelectedPost(post)}>{post}</button>
                   </li>
                ))}

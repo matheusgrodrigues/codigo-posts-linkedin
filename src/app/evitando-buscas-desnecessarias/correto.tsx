@@ -92,14 +92,14 @@ export default function EvitandoBuscasDesnecessariasCorreto() {
    }, [show]);
 
    return (
-      <main style={{ flexDirection: "column", display: "flex", gap: "12px" }}>
-         <div style={{ justifyContent: "center", display: "flex", height: "200px" }}>
+      <main className="flex-col items-center flex gap-3 w-full">
+         <div className="justify-center flex h-[200px] w-full">
             {show.videos && <Videos ref={videosRef} />}
             {show.fotos && <Fotos ref={fotosRef} />}
             {show.mapa && <Mapa ref={mapaRef} />}
          </div>
 
-         <div>
+         <div className="flex gap-3">
             <button onClick={handleShowVideos}>Vídeos</button>
             <button onClick={handleShowFotos}>Fotos</button>
             <button onClick={handleShowMapa}>Mapa</button>
@@ -123,20 +123,7 @@ const Videos = forwardRef<VideosRef>((props, ref) => {
       []
    );
 
-   return (
-      <div
-         style={{
-            backgroundColor: "red",
-            justifyContent: "center",
-            alignItems: "center",
-            display: "flex",
-            width: "100%",
-            height: "100%",
-         }}
-      >
-         {videos.map((video) => video)}
-      </div>
-   );
+   return <div className="justify-center items-center flex bg-red-700 size-full">{videos.map((video) => video)}</div>;
 });
 
 Videos.displayName = "Videos";
@@ -156,20 +143,7 @@ const Fotos = forwardRef<FotosRef>((props, ref) => {
       []
    );
 
-   return (
-      <div
-         style={{
-            backgroundColor: "yellow",
-            justifyContent: "center",
-            alignItems: "center",
-            display: "flex",
-            width: "100%",
-            height: "100%",
-         }}
-      >
-         {fotos.map((foto) => foto)}
-      </div>
-   );
+   return <div className="justify-center items-center flex bg-yellow-700 size-full">{fotos.map((foto) => foto)}</div>;
 });
 
 Fotos.displayName = "Fotos";
@@ -183,20 +157,7 @@ const Mapa = forwardRef<MapaRef>((props, ref) => {
 
    useImperativeHandle(ref, () => ({ setMapa }), []);
 
-   return (
-      <div
-         style={{
-            backgroundColor: "blue",
-            justifyContent: "center",
-            alignItems: "center",
-            display: "flex",
-            width: "100%",
-            height: "100%",
-         }}
-      >
-         {mapa}
-      </div>
-   );
+   return <div className="justify-center items-center flex bg-blue-700 size-full">{mapa}</div>;
 });
 
 Mapa.displayName = "Mapa";
