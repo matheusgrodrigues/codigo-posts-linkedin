@@ -4,7 +4,7 @@ const fakeHttpGetVideos = () => ["video1", "video2"];
 const fakeHttpGetFotos = () => ["foto1", "foto2"];
 const fakeHttpGetMapa = () => "mapa";
 
-export default function EvitandoBuscasDesnecessariasCorreto() {
+export default function Correto() {
    const [show, setShow] = useState({
       videos: true,
       fotos: false,

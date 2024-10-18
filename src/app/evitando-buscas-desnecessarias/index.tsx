@@ -1,10 +1,8 @@
-import EvitandoBuscasDesnecessariasCorreto from "./correto";
-import EvitandoBuscasDesnecessariasErrado from "./errado";
+import Correto from "./correto";
+import Errado from "./errado";
 
 export default function EvitandoBuscasDesnecessarias() {
    const selected: "correto" | "errado" = "correto";
 
-   return (
-      <>{selected === "correto" ? <EvitandoBuscasDesnecessariasCorreto /> : <EvitandoBuscasDesnecessariasErrado />}</>
-   );
+   return <>{selected === "correto" ? <Correto /> : <Errado />}</>;
 }

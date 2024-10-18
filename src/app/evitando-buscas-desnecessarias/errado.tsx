@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 
-export default function EvitandoBuscasDesnecessariasErrado() {
+export default function Errado() {
    const [show, setShow] = useState({
       videos: true,
       fotos: false,
